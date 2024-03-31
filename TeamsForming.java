@@ -25,6 +25,15 @@ public class TeamsForming {
 
         Collections.sort(skill_vector);
 
+        int total_difference = 0;
+        for(byte i = 0; i < skill_vector.size(); i++){
+            int difference = Math.abs(skill_vector.get(i) - skill_vector.get(i+1));
+            total_difference += difference;
+            i++;
+        }
+
+        System.out.println("Minimum number of problems to be solved: " + total_difference);
+
         input.close();
 
     }
