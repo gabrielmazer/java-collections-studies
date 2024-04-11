@@ -22,8 +22,7 @@ public class Ex2 extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        String t1 = text1.getText();
-        System.out.println(t1);
+        System.out.println(text1.getText());
         
     }
 
