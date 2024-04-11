@@ -10,18 +10,30 @@ public class SecondType extends JFrame {
     JTextField t1 = new JTextField(10);
     JTextField t2 = new JTextField(10);
 
+    JPanel p1 = new JPanel();
+    JPanel p2 = new JPanel(new GridLayout(4, 1));
+    JPanel p3 = new JPanel();
+
+    JLabel label = new JLabel("= 0");
+
     SecondType(){
         super("Calculadora");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel p = new JPanel(new GridLayout(4, 1));
-        p.add(bt_soma);
-        p.add(bt_subtrai);
-        p.add(bt_multiplica);
-        p.add(bt_divide);
+        setLayout(new GridLayout(1, 3));
+        
+        p1.add(t1);
+        
+        p2.add(bt_soma);
+        p2.add(bt_subtrai);
+        p2.add(bt_multiplica);
+        p2.add(bt_divide);
 
-        add(p, BorderLayout.CENTER);
-        add(t1, BorderLayout.WEST);
-        add(t2, BorderLayout.EAST);
+        p3.add(t2);
+        p3.add(label);
+
+        add(p1);
+        add(p2);
+        add(p3);
 
         pack();
         setVisible(true);
