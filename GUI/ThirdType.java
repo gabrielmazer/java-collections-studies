@@ -34,7 +34,13 @@ public class ThirdType extends JFrame{
         cb.addItem("Multiplica");
         cb.addItem("Divide");
 
+        p3.add(button);
+
         add(p1);
+        add(p3);
+
+        setVisible(true);
+        pack();
 
     }
     public static void main(String[] args) {
