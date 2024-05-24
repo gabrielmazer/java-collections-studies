@@ -22,9 +22,8 @@ public class FibonacciA1 extends JFrame{
       bt.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e){
             try{
-               int v = Integer.parseInt(tx.getText());
-               long res = fib(v);
-               lb.setText(" "  + res);
+               bt.setEnabled(false);
+               new Fibot().start();
             }catch(NumberFormatException exc){
                lb.setText("Digite um número natural!");
             }
@@ -39,10 +38,18 @@ public class FibonacciA1 extends JFrame{
       setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
    }
 
-   private long fib(int v){
-      if (v <= 1)
-         return 1;
-      return fib(v-1) + fib(v-2);
+   class Fibot extends Thread {
+      public void run(){
+         int v = Integer.parseInt(tx.getText());
+         long res = fib(v);
+         lb.setText(" "  + res);
+         bt.setEnabled(true);
+      }
+      private long fib(int v){
+         if (v <= 1)
+            return 1;
+         return fib(v-1) + fib(v-2);
+      }
    }
    
    public static void main(String[] args) {
